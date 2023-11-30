@@ -1,10 +1,12 @@
 
-import './App.css'
+import './App.css';
+import MainComponentProps from './components/MainComponent/MainComponent'
 
 function App() {
 
- return<>
- Mahad Assignment</>
+ return(<>
+    <MainComponentProps></MainComponentProps>
+ </>)
 }
 
 export default App
