@@ -3,11 +3,12 @@
     color: white;
     width: 15vw;
     min-width: 250px;
+    height: 100vh;
 
 }
 
 .profile-section{
-    border-bottom: 2px solid var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
     min-height: 4rem;
     display: flex;
     align-items: center;
