@@ -34,7 +34,7 @@ function Sidebar() {
                 </div>
 
                 <div className='image-container'>
-                    <img src="/src/assets/headshot.jpg" width={50} alt="headshot" />
+                    <img src="src/assets/headshot.jpg" width={50} alt="headshot" />
                 </div>
             </div>
 
