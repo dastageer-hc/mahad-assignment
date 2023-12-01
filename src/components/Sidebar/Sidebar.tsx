@@ -1,24 +1,37 @@
 import './Sidebar.css';
-import { LuChevronDown } from "react-icons/lu";
-import { AiFillDashboard } from "react-icons/ai";
 
 // menu icon imports 
+import { LuChevronDown } from "react-icons/lu";
+import { AiFillDashboard } from "react-icons/ai";
+import { FaCar } from "react-icons/fa";
+import { LuComputer } from "react-icons/lu";
+import { IoCheckmarkCircleSharp } from "react-icons/io5";
+import { BsExclamationDiamondFill } from "react-icons/bs";
+import { FaBell } from "react-icons/fa6";
+import { FiTool } from "react-icons/fi";
+import { BsFillFuelPumpFill } from "react-icons/bs";
+import { IoMdContacts } from "react-icons/io";
+import { BsFillBoxFill } from "react-icons/bs";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaChartPie } from "react-icons/fa";
+import { FaBoxesStacked } from "react-icons/fa6";
 
 const menuItems = [
-    { icon: <AiFillDashboard/>, title: "Dashboard" },
-    { icon: "vehicle", title: "Vehicle" },
-    { icon: "equipment", title: "Equipment" },
-    { icon: "inspections", title: "Inspections" },
-    { icon: "issues", title: "Issues" },
-    { icon: "reminders", title: "Reminders" },
-    { icon: "service", title: "Service" },
-    { icon: "fuel", title: "Fuel" },
-    { icon: "contacts", title: "Contacts & Users" },
-    { icon: "parts", title: "Parts & Inventory" },
-    { icon: "places", title: "Places" },
-    { icon: "reports", title: "Reports" },
-    { icon: "integrations", title: "Integrations" },
-  ];
+    { icon: <AiFillDashboard/>, title: "Dashboard", is_expandable: false },
+    { icon: <FaCar />, title: "Vehicle", is_expandable: true },
+    { icon: < LuComputer />, title: "Equipment", is_expandable: true },
+    { icon: <IoCheckmarkCircleSharp  />, title: "Inspections", is_expandable: true },
+    { icon: <BsExclamationDiamondFill  />, title: "Issues", is_expandable: true },
+    { icon: <FaBell />, title: "Reminders", is_expandable: true },
+    { icon: <FiTool />, title: "Service", is_expandable: true },
+    { icon: <BsFillFuelPumpFill  />, title: "Fuel", is_expandable: true },
+    { icon: <IoMdContacts />, title: "Contacts & Users", is_expandable: true },
+    { icon: <BsFillBoxFill />, title: "Parts & Inventory", is_expandable: true },
+    { icon: <FaMapMarkerAlt  />, title: "Places", is_expandable: true },
+    { icon: <FaChartPie  />, title: "Reports", is_expandable: true },
+    { icon: <FaBoxesStacked  />, title: "Integrations", is_expandable: true },
+];
+
   
 
 function Sidebar() {
@@ -39,7 +52,25 @@ function Sidebar() {
             </div>
 
             <div className='menu-section-container'>
-                {menuItems.map((menu)=><div>{menu.icon}{ menu.title}</div>)}
+               {menuItems.map((menu, i)=>{
+                return <>{
+                    <div key={i} className='menu-item-container'>
+                        <div className='menu-item'>
+                            <span className='menu-icon'>
+                                { (typeof menu?.icon !='string' ? menu?.icon : null)}
+                            </span>
+                            <span className='menu-title'>
+                                {menu.title}
+
+                                {(menu?.is_expandable ? <span className='expand-arrow'>
+                                    <LuChevronDown />
+                                </span> : null )}
+                                
+                            </span>
+                        </div>
+                    </div>
+                }</>
+               })}
             </div>
         </section>
     
