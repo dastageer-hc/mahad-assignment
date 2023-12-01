@@ -5,7 +5,7 @@ import logoHero from '../../../assets/logo-hero.png';
 function Topbar(){
     return <>
             {/* Top bar */}
-            <div className="topbar-container bg-white min-h-topbarHeight flex items-center">  
+            <div className="topbar-container bg-white border-b-neutral-300 border-b-2 min-h-topbarHeight flex items-center">  
                 
                 <div className="logo-hero w-14 h-12 ml-5 flex items-start
                  justify-center">
