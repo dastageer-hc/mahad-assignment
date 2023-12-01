@@ -1,4 +1,5 @@
 import './Sidebar.css';
+import headShot from '../../assets/headshot.jpg'
 
 // menu icon imports 
 import { LuChevronDown } from "react-icons/lu";
@@ -32,7 +33,6 @@ const menuItems = [
     { icon: <FaBoxesStacked  />, title: "Integrations", is_expandable: true },
 ];
 
-  
 
 function Sidebar() {
 
@@ -47,7 +47,7 @@ function Sidebar() {
                 </div>
 
                 <div className='image-container'>
-                    <img src="src/assets/headshot.jpg" width={50} alt="headshot" />
+                    <img src={headShot} width={50} alt="headshot" />
                 </div>
             </div>
 
