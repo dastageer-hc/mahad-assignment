@@ -5,7 +5,7 @@ import Dashboard from "../../routes/Dashboard/dashboard"
 function Scaffold() {
     return <>
         <div className="bg-slate-100">
-            <div className="sticky top-0 " >
+            <div className="sticky top-0 z-10 " >
                 <Topbar />
 
             </div>

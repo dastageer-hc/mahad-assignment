@@ -6,7 +6,7 @@ import { FaSearch } from "react-icons/fa";
 function Topbar(){
     return <>
             {/* Top bar */}
-            <div className="topbar-container bg-white border-b-neutral-300 border-b-2 min-h-topbarHeight flex items-center">  
+            <div className="z-index topbar-container bg-white border-b-neutral-300 border-b-2 min-h-topbarHeight flex items-center">  
                 
                 <div className="logo-hero w-14 h-12 ml-5 flex items-start
                  justify-center">

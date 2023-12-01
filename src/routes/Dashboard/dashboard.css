@@ -6,6 +6,7 @@
     grid-row-gap: 0px;
     gap: 1rem;
     margin: 1rem;
+    z-index: 0;
     }
     
     .div1 { grid-area: 1 / 1 / 2 / 2; }
@@ -25,11 +26,10 @@
     .card-container{
         /* background-color: red; */
         /* background-color: white; */
-        min-height: 13rem;
-        border-radius: 2px;
+        min-height: 16rem;
+        border-radius: 4px;
         color: black;
         display: flex;
-        align-items: center;
-        justify-content: center;
+
 
     }

@@ -5,11 +5,11 @@ import Scaffold from '../ScaffoldComponent/Scaffold.tsx';
 const MainComponent = () => (
   <div className="MainComponent flex flex-row">
 
-    <div className='bg-slate-100 sticky h-full top-0 bg-red-50'>
+    <div className='bg-slate-100 sticky h-full relative z-10 top-0 bg-red-50'>
       <Sidebar></Sidebar>
 
     </div>
-    <div className='grow'>
+    <div className='z-0 relative grow'>
         <Scaffold />
     </div>
 
