@@ -72,6 +72,12 @@
 .menu-item-container:hover{
     background-color: var(--dark-primary);
 }
+
+
+.menu-item-container.active-menu{
+    background-color: var(--dark-primary);
+
+}
 .menu-item-container .menu-item .menu-icon{
     padding-top: .25rem;
     padding-right: .8rem;

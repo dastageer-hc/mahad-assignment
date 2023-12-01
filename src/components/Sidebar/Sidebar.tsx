@@ -42,7 +42,7 @@ function Sidebar() {
             <div className='profile-section'>
                 <div className="name-container">
                     <span className='header'><b>Hooli Dynamic <LuChevronDown /></b></span>
-                    <span className='sub-header'>Jordan Finch</span>
+                    <span className='sub-header text-gray-300'>Jordan Finch</span>
 
                 </div>
 
@@ -54,7 +54,7 @@ function Sidebar() {
             <div className='menu-section-container'>
                {menuItems.map((menu, i)=>{
                 return <>{
-                    <div key={i} className='menu-item-container'>
+                    <div key={i} className={`menu-item-container text-gray-100 ${(menu.title =='Dashboard' ? 'active-menu': '')}`} >
                         <div className='menu-item' >
                             <span className='menu-icon'>
                                 { (typeof menu?.icon !='string' ? menu?.icon : null)}

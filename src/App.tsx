@@ -1,11 +1,15 @@
 
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import MainComponentProps from './components/MainComponent/MainComponent'
 
 function App() {
 
  return(<>
-    <MainComponentProps></MainComponentProps>
+ <Routes>
+   <Route path='/' Component={MainComponentProps}>
+   </Route>
+ </Routes>
  </>)
 }
 
