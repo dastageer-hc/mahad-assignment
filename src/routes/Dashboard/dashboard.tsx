@@ -2,6 +2,7 @@ import './dashboard.css'
 function Dashboard() {
     return <>
         <div className="stat-cards-container min-w-fit ">
+            {/* Numbered Info */}
             <div className="div1 card-container bg-white drop-shadow-md flex flex-col ">
 
                 <section className="header w-full h-fit flex items-center justify-between px-5 pt-3">
@@ -33,22 +34,92 @@ function Dashboard() {
 
             </div>
 
+            {/* Numbered Info */}
             <div className="div2 card-container bg-white drop-shadow-md flex flex-col">
                 <section className="header w-full h-fit flex items-center justify-between px-5 pt-3">
                     <span className='font-bold text-base'>Vehicles</span>
-                    <span className='text-sky-500 text-sm cursor-pointer'>View Reports</span>
+                    <span className='text-sky-500 text-sm cursor-pointer text-right'>View Reports</span>
                 </section>
+
+
+                <div className='grow w-full  flex flex-col border-b-neutral-200 border-b-2  pt-3 '>
+                    <div className=' w-full h-14 px-6 flex items-center justify-between py-5 border-b-neutral-100  border-b-2'>
+                        <span>
+                            Active
+                        </span>
+                        <span className='text-sm bg-green-500 px-2 rounded-full w-8 text-white'>
+                            65
+                        </span>
+                    </div>
+                    <div className='w-full h-14 px-6 flex items-center justify-between py-5 border-b-neutral-100  border-b-2'>
+                        <span>
+                            Inactive
+                        </span>
+                        <span className='text-sm  px-2 w-8 bg-yellow-500 rounded-full text-white'>
+                            13
+                        </span>
+                    </div>
+                    <div className='w-full h-14 px-6 flex items-center justify-between py-5'>
+                        <span>
+                            In Shop
+                        </span>
+                        <span className='text-sm  px-2 bg-red-400  w-8 flex justify-center rounded-full text-white'>
+                            4
+                        </span>
+                    </div>
+                    
+                    
+                    
+                </div>
+                
+
             </div>
+
+            {/* Graph */}
             <div className="div3 card-container bg-white drop-shadow-md flex flex-col ">
                 <section className="header w-full h-fit flex items-center justify-between px-5 pt-3">
                     <span className='font-bold text-base'>Total Costs</span>
                     <span className='text-sky-500 text-sm cursor-pointer'>View Reports</span>
                 </section>
             </div>
+
+            {/* Numbered Info */}
             <div className="div4 card-container bg-white drop-shadow-md flex flex-col">
                 <section className="header w-full h-fit flex items-center justify-between px-5 pt-3">
                     <span className='font-bold text-base'>Equipment Status</span>
                 </section>
+
+                <div className='grow w-full  flex flex-col border-b-neutral-200 border-b-2  pt-3 '>
+                    <div className=' w-full h-14 px-6 flex items-center justify-between py-5 border-b-neutral-100  border-b-2'>
+                        <span>
+                            In-Service
+                        </span>
+                        <span className='text-sm bg-green-500 px-2 rounded-full w-8 text-white'>
+                            21
+                        </span>
+                    </div>
+                    <div className='w-full h-14 px-6 flex items-center justify-between py-5 border-b-neutral-100  border-b-2'>
+                        <span>
+                            Out-of-Service
+                        </span>
+                        <span className='text-sm flex justify-center  px-2 w-8 bg-yellow-500 rounded-full text-white'>
+                            3
+                        </span>
+                    </div>
+                    <div className='w-full h-14 px-6 flex items-center justify-between py-5'>
+                        <span>
+                            Disposed
+                        </span>
+                        <span className='text-sm  px-2 bg-gray-300  w-8 flex justify-center rounded-full text-white'>
+                            1
+                        </span>
+                    </div>
+                    
+                    
+                    
+                </div>
+                
+
             </div>
             <div className="div5 card-container bg-white drop-shadow-md flex flex-col">
                 <section className="header w-full h-fit flex items-center justify-between px-5 pt-3">
@@ -82,6 +153,36 @@ function Dashboard() {
                 <section className="header w-full h-fit flex items-center justify-between px-5 pt-3">
                     <span className='font-bold text-base'>Active Work Orders</span>
                 </section>
+
+                <div className='grow w-full  flex flex-col border-b-neutral-200 border-b-2  pt-3 '>
+                    <div className=' w-full h-14 px-6 flex items-center justify-between py-5 border-b-neutral-100  border-b-2'>
+                        <span>
+                            Open
+                        </span>
+                        <span className='text-sm bg-green-500 px-2 rounded-full w-8 text-white'>
+                            53
+                        </span>
+                    </div>
+                    <div className='w-full h-14 px-6 flex items-center justify-between py-5 border-b-neutral-100  border-b-2'>
+                        <span>
+                            Waiting for Parts
+                        </span>
+                        <span className='text-sm  px-2 w-8 bg-gray-500 rounded-full text-white'>
+                            45
+                        </span>
+                    </div>
+                    <div className='w-full h-14 px-6 flex items-center justify-between py-5'>
+                        <span>
+                            In Progress
+                        </span>
+                        <span className='text-sm  px-2 bg-yellow-500  w-8 flex justify-center rounded-full text-white'>
+                            14
+                        </span>
+                    </div>
+                    
+                    
+                    
+                </div>
             </div>
             <div className="div7 card-container bg-white drop-shadow-md flex flex-col">
                 <section className="header w-full h-fit flex items-center justify-between px-5 pt-3">
@@ -90,18 +191,74 @@ function Dashboard() {
             </div>
             <div className="div8 card-container bg-white drop-shadow-md flex flex-col"><section className="header w-full h-fit flex items-center justify-between px-5 pt-3">
                 <span className='font-bold text-base'>Inspection Submissions</span>
-                <span className='text-sky-500 text-sm cursor-pointer'>View Reports</span>
+                <span className='text-sky-500 text-sm cursor-pointer flex justify-end text-right'>View Reports</span>
             </section>
             </div>
             <div className="div9 card-container bg-white drop-shadow-md flex flex-col"><section className="header w-full h-fit flex items-center justify-between px-5 pt-3">
                 <span className='font-bold text-base'>Vehicle Location</span>
                 <span className='text-sky-500 text-sm cursor-pointer'>All Places</span>
+
+                
+
             </section>
+
+            <div className='grow w-full  flex flex-col border-b-neutral-200 border-b-2  pt-3 '>
+                    <div className=' w-full h-14 px-6 flex items-center justify-between py-5 border-b-neutral-100  border-b-2'>
+                        <span>
+                            Warehouse
+                        </span>
+                        <span className='text-sm  bg-gray-400 px-2 rounded-full w-8 text-white'>
+                            21
+                        </span>
+                    </div>
+                    <div className='w-full h-14 px-6 flex items-center justify-between py-5 border-b-neutral-100  border-b-2'>
+                        <span>
+                            In-Transit
+                        </span>
+                        <span className='text-sm flex justify-center  px-2 w-8  bg-gray-400 rounded-full text-white'>
+                            3
+                        </span>
+                    </div>
+                    <div className='w-full h-14 px-6 flex items-center justify-between py-5'>
+                        <span>
+                            In-Depot
+                        </span>
+                        <span className='text-sm  px-2 bg-gray-400  w-8 flex justify-center rounded-full text-white'>
+                            1
+                        </span>
+                    </div>
+                    
+                    
+                    
+                </div>
             </div>
             <div className="div10 card-container bg-white drop-shadow-md flex flex-col">
                 <section className="header w-full h-fit flex items-center justify-between px-5 pt-3">
                     <span className='font-bold text-base'>Inventory</span>
                 </section>
+
+                <div className='w-full flex items-center justify-around grow'>
+
+<section className='number-pallette 
+flex flex-col h-full justify-center gap-5 items-start items-center '>
+    <div className='number-info text-5xl text-yellow-400 '>
+        6
+    </div>
+    <div className="subtext text-gray-400">
+       In Stock
+    </div>
+</section>
+
+<section className='number-pallette 
+flex flex-col h-full justify-center gap-5 items-start items-center '>
+    <div className='number-info text-5xl text-red-400 '>
+        3
+    </div>
+    <div className="subtext text-gray-400">
+        Out of Stock
+    </div>
+</section>
+</div>
             </div>
             <div className="div11 card-container bg-white drop-shadow-md flex flex-col">
                 <section className="header w-full h-fit flex items-center justify-between px-5 pt-3">
@@ -125,7 +282,7 @@ function Dashboard() {
                             5
                         </div>
                         <div className="subtext text-gray-400">
-                            Overdue
+                            Closed
                         </div>
                     </section>
 
