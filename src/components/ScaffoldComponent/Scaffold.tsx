@@ -4,15 +4,19 @@ import { Route, Routes } from "react-router-dom"
 import Dashboard from "../../routes/Dashboard/dashboard"
 function Scaffold() {
     return <>
-        <div className=" bg-slate-200 min-h-screen">
-            <Topbar />
-            
+        <div className="bg-slate-100">
+            <div className="sticky top-0 " >
+                <Topbar />
+
+            </div>
             <Routes>
+                <Route path="/" Component={Dashboard}></Route>
                 <Route path="/dashboard" Component={Dashboard}></Route>
             </Routes>
         </div>
 
-    
+
+
 
     </>
 }
