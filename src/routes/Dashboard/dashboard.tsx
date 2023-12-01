@@ -1,4 +1,69 @@
-import './dashboard.css'
+import './dashboard.css';
+
+import ReactApexChart from 'react-apexcharts';
+
+
+// charts config
+// --------------
+// Total Cost 
+
+const chartOptionsTotalCosts: any = {
+    chart: {
+        type: 'bar',
+        height: 2,
+        toolbar: {
+            show: false,
+        }
+    },
+    xaxis: {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    },
+
+};
+
+const chartDataTotalCosts = [
+    {
+        name: 'series-1',
+        data: [30, 40, 35, 50, 60, 50],
+    },
+];
+
+// fuel costs
+
+const chartOptionsFuelCosts: any = {
+    chart: {
+        type: 'bar',
+        height: 2,
+        toolbar: {
+            show: false,
+        },
+        theme: {
+            palette: 'palette4',
+          },
+    },
+    plotOptions: {
+        bar: {
+          colors: {
+            ranges: [{
+              color: '#2196F4', 
+            }],
+          },},
+    xaxis: {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    },
+
+}}
+
+const chartDataFuelCosts = [
+    {
+        name: 'series-1',
+        data: [30, 40, 35, 50, 60, 50],
+       
+    },
+];
+
+
+
 function Dashboard() {
     return <>
         <div className="stat-cards-container min-w-fit ">
@@ -67,20 +132,28 @@ function Dashboard() {
                             4
                         </span>
                     </div>
-                    
-                    
-                    
+
+
+
                 </div>
-                
+
 
             </div>
 
+
             {/* Graph */}
+
             <div className="div3 card-container bg-white drop-shadow-md flex flex-col ">
                 <section className="header w-full h-fit flex items-center justify-between px-5 pt-3">
                     <span className='font-bold text-base'>Total Costs</span>
                     <span className='text-sky-500 text-sm cursor-pointer'>View Reports</span>
                 </section>
+                <div className='h-fit' style={{ height: '5rem' }}>
+                    <ReactApexChart options={chartOptionsTotalCosts} 
+                    series={chartDataTotalCosts} type='bar'
+                      height='200' />
+
+                </div>
             </div>
 
             {/* Numbered Info */}
@@ -114,11 +187,11 @@ function Dashboard() {
                             1
                         </span>
                     </div>
-                    
-                    
-                    
+
+
+
                 </div>
-                
+
 
             </div>
             <div className="div5 card-container bg-white drop-shadow-md flex flex-col">
@@ -179,30 +252,44 @@ function Dashboard() {
                             14
                         </span>
                     </div>
-                    
-                    
-                    
+
+
+
                 </div>
             </div>
             <div className="div7 card-container bg-white drop-shadow-md flex flex-col">
                 <section className="header w-full h-fit flex items-center justify-between px-5 pt-3">
                     <span className='font-bold text-base'>Service Costs</span>
                 </section>
+
+                <div className='h-fit' style={{ height: '5rem' }}>
+                    <ReactApexChart options={chartOptionsTotalCosts} 
+                    series={chartDataTotalCosts} type='bar'
+                      height='200' />
+
+                </div>
             </div>
             <div className="div8 card-container bg-white drop-shadow-md flex flex-col"><section className="header w-full h-fit flex items-center justify-between px-5 pt-3">
                 <span className='font-bold text-base'>Inspection Submissions</span>
                 <span className='text-sky-500 text-sm cursor-pointer flex justify-end text-right'>View Reports</span>
             </section>
+
+            <div className='h-fit' style={{ height: '5rem' }}>
+                    <ReactApexChart options={chartOptionsTotalCosts} 
+                    series={chartDataTotalCosts} type='bar'
+                      height='200' />
+
+                </div>
             </div>
             <div className="div9 card-container bg-white drop-shadow-md flex flex-col"><section className="header w-full h-fit flex items-center justify-between px-5 pt-3">
                 <span className='font-bold text-base'>Vehicle Location</span>
                 <span className='text-sky-500 text-sm cursor-pointer'>All Places</span>
 
-                
+
 
             </section>
 
-            <div className='grow w-full  flex flex-col border-b-neutral-200 border-b-2  pt-3 '>
+                <div className='grow w-full  flex flex-col border-b-neutral-200 border-b-2  pt-3 '>
                     <div className=' w-full h-14 px-6 flex items-center justify-between py-5 border-b-neutral-100  border-b-2'>
                         <span>
                             Warehouse
@@ -227,9 +314,9 @@ function Dashboard() {
                             1
                         </span>
                     </div>
-                    
-                    
-                    
+
+
+
                 </div>
             </div>
             <div className="div10 card-container bg-white drop-shadow-md flex flex-col">
@@ -239,26 +326,26 @@ function Dashboard() {
 
                 <div className='w-full flex items-center justify-around grow'>
 
-<section className='number-pallette 
-flex flex-col h-full justify-center gap-5 items-start items-center '>
-    <div className='number-info text-5xl text-yellow-400 '>
-        6
-    </div>
-    <div className="subtext text-gray-400">
-       In Stock
-    </div>
-</section>
+                    <section className='number-pallette 
+                        flex flex-col h-full justify-center gap-5 items-start items-center '>
+                        <div className='number-info text-5xl text-yellow-400 '>
+                            6
+                        </div>
+                        <div className="subtext text-gray-400">
+                            In Stock
+                        </div>
+                    </section>
 
-<section className='number-pallette 
-flex flex-col h-full justify-center gap-5 items-start items-center '>
-    <div className='number-info text-5xl text-red-400 '>
-        3
-    </div>
-    <div className="subtext text-gray-400">
-        Out of Stock
-    </div>
-</section>
-</div>
+                    <section className='number-pallette 
+                        flex flex-col h-full justify-center gap-5 items-start items-center '>
+                        <div className='number-info text-5xl text-red-400 '>
+                            3
+                        </div>
+                        <div className="subtext text-gray-400">
+                            Out of Stock
+                        </div>
+                    </section>
+                </div>
             </div>
             <div className="div11 card-container bg-white drop-shadow-md flex flex-col">
                 <section className="header w-full h-fit flex items-center justify-between px-5 pt-3">
@@ -293,6 +380,13 @@ flex flex-col h-full justify-center gap-5 items-start items-center '>
                     <span className='font-bold text-base'>Fuel Costs</span>
                     <span className='text-sky-500 text-sm cursor-pointer'>View Reports</span>
                 </section>
+
+                <div className='h-fit' style={{ height: '5rem' }}>
+                    <ReactApexChart options={chartOptionsFuelCosts} 
+                    series={chartDataFuelCosts} type='bar'
+                      height='200' />
+
+                </div>
             </div>
             <div className="div13 card-container bg-white drop-shadow-md flex flex-col">
                 <section className="header w-full h-fit flex items-center justify-between px-5 pt-3">
