@@ -55,7 +55,7 @@ function Sidebar() {
                {menuItems.map((menu, i)=>{
                 return <>{
                     <div key={i} className='menu-item-container'>
-                        <div className='menu-item'>
+                        <div className='menu-item' >
                             <span className='menu-icon'>
                                 { (typeof menu?.icon !='string' ? menu?.icon : null)}
                             </span>
