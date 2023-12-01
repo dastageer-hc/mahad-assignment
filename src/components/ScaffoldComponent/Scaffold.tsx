@@ -9,6 +9,12 @@ function Scaffold() {
                 <Topbar />
 
             </div>
+            <div className="bg-white px-4 h-12 flex items-center border-b-neutral-200 border-b-2">
+                <h1 className="text-2xl text-bold ">
+                Dashboard
+                </h1>
+            </div>
+
             <Routes>
                 <Route path="/" Component={Dashboard}></Route>
                 <Route path="/dashboard" Component={Dashboard}></Route>
