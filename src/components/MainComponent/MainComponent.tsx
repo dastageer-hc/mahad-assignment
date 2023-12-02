@@ -7,7 +7,7 @@ const MainComponent = () => {
   
   // const [toggleValue, toggleSidebar]= useState(window.innerWidth)
 
-  console.log(toggleValue)
+  // console.log(toggleValue)
 
   return(
 
