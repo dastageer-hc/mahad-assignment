@@ -1,7 +1,6 @@
 import './MainComponent.css';
 import Sidebar from '../Sidebar/Sidebar.tsx';
 import Scaffold from '../ScaffoldComponent/Scaffold.tsx';
-import { useState } from 'react';
 
 const MainComponent = () => {
   
