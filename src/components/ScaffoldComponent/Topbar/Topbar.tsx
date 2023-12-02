@@ -1,7 +1,8 @@
-import { MdOutlineQuestionMark } from "react-icons/md";
+import { MdMenu, MdOutlineQuestionMark } from "react-icons/md";
 import { FaPlus } from "react-icons/fa6";
 import logoHero from '../../../assets/logo-hero.png';
 import { FaSearch } from "react-icons/fa";
+import './Topbar.css'
 
 function Topbar(){
     return <>
@@ -36,10 +37,14 @@ function Topbar(){
                     <button className="rounded-full
                      border-2  
                       focus:outline-none focus:ring
-                       focus:border-blue-300 p-1 mr-4" 
+                       focus:border-blue-300 p-1 mr-2 sm:mr-4" 
                        >
                         <FaPlus className="text-slate-400
                          color-slate-300 w-6 h-6" />
+                    </button>
+
+                    <button className="show rounded-full border-2 focus:outline-none focus:ring focus:border-blue-300 p-1 mr-3">
+                        <MdMenu className="text-slate-400 color-slate-300 w-6 h-6" />
                     </button>
                  </div>
 

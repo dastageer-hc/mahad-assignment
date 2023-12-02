@@ -2,11 +2,17 @@ import './dashboard.css';
 
 import ReactApexChart from 'react-apexcharts';
 
+// image imports 
 
-// charts config
-// --------------
-// Total Cost 
+import User1 from '../../assets/Users/user1.jpg';
+import User2 from '../../assets/Users/user2.jpg';
+import User3 from '../../assets/Users/user3.jpg';
+import User4 from '../../assets/Users/user4.jpg';
+import User5 from '../../assets/Users/user5.jpg';
 
+
+
+//---- charts config ----
 const chartOptionsTotalCosts: any = {
     chart: {
         type: 'bar',
@@ -17,6 +23,9 @@ const chartOptionsTotalCosts: any = {
     },
     xaxis: {
         categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    },
+    dataLabels: {
+        enabled: false
     },
 
 };
@@ -33,32 +42,28 @@ const chartDataTotalCosts = [
 const chartOptionsFuelCosts: any = {
     chart: {
         type: 'bar',
-        height: 2,
+        innerHeight: 'auto',
         toolbar: {
             show: false,
         },
-        theme: {
-            palette: 'palette4',
-          },
+        colors: ["#FCCF31", "#17ead9", "#f02fc2"],
     },
-    plotOptions: {
-        bar: {
-          colors: {
-            ranges: [{
-              color: '#2196F4', 
-            }],
-          },},
+
     xaxis: {
         categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
     },
+    dataLabels: {
+        enabled: false
+    },
+    colors: ['#26a5a5'],
 
-}}
+}
 
 const chartDataFuelCosts = [
     {
         name: 'series-1',
         data: [30, 40, 35, 50, 60, 50],
-       
+
     },
 ];
 
@@ -148,10 +153,10 @@ function Dashboard() {
                     <span className='font-bold text-base'>Total Costs</span>
                     <span className='text-sky-500 text-sm cursor-pointer'>View Reports</span>
                 </section>
-                <div className='h-fit' style={{ height: '5rem' }}>
-                    <ReactApexChart options={chartOptionsTotalCosts} 
-                    series={chartDataTotalCosts} type='bar'
-                      height='200' />
+                <div className='chart-container' style={{ width: '100%', maxHeight: '60%' }}>
+                    <ReactApexChart options={chartOptionsTotalCosts}
+                        series={chartDataTotalCosts} type='bar'
+                          />
 
                 </div>
             </div>
@@ -262,10 +267,10 @@ function Dashboard() {
                     <span className='font-bold text-base'>Service Costs</span>
                 </section>
 
-                <div className='h-fit' style={{ height: '5rem' }}>
-                    <ReactApexChart options={chartOptionsTotalCosts} 
-                    series={chartDataTotalCosts} type='bar'
-                      height='200' />
+                <div  className='chart-container' style={{ width: '100%', height: '60%' }}>
+                    <ReactApexChart options={chartOptionsTotalCosts}
+                        series={chartDataTotalCosts} type='bar'
+                         />
 
                 </div>
             </div>
@@ -274,10 +279,11 @@ function Dashboard() {
                 <span className='text-sky-500 text-sm cursor-pointer flex justify-end text-right'>View Reports</span>
             </section>
 
-            <div className='h-fit' style={{ height: '5rem' }}>
-                    <ReactApexChart options={chartOptionsTotalCosts} 
-                    series={chartDataTotalCosts} type='bar'
-                      height='200' />
+                <div  className='chart-container' style={{ width: '100%', height: '60%' }}>
+
+                    <ReactApexChart options={chartOptionsTotalCosts}
+                        series={chartDataTotalCosts} type='bar'
+                    />
 
                 </div>
             </div>
@@ -381,16 +387,136 @@ function Dashboard() {
                     <span className='text-sky-500 text-sm cursor-pointer'>View Reports</span>
                 </section>
 
-                <div className='h-fit' style={{ height: '5rem' }}>
-                    <ReactApexChart options={chartOptionsFuelCosts} 
-                    series={chartDataFuelCosts} type='bar'
-                      height='200' />
+                <div className='chart-container' style={{ width: '100%', height: '60%' }}>
+
+                    <ReactApexChart options={chartOptionsFuelCosts}
+                        series={chartDataFuelCosts} type='bar'
+                       />
 
                 </div>
+
             </div>
+
+            {/* Comments  */}
+            {/* header */}
             <div className="div13 card-container bg-white drop-shadow-md flex flex-col">
                 <section className="header w-full h-fit flex items-center justify-between px-5 pt-3">
                     <span className='font-bold text-base'>Recent Comments</span>
+                </section>
+
+                    {/* users comment list  */}
+                <section className='mt-9 flex items-start flex-col sm:flex-row max-w-full'>
+                    <div className="user-details-section  grow flex max-w-full">
+
+                        <div className="w-14 h-14 rounded-full overflow-hidden ml-5  mr-4">
+                            <img src={User1} className='w-full h-full object-cover object-center'  alt="User Image"/>
+                        </div>
+
+                        <div className="comment-block flex flex-col justify-center">
+                            <span className="comment-header pr-5 overflow-hidden whitespace-wrap overflow-ellipsis">Martha Godwin commented on <span className='text-sky-500 text-sm cursor-pointer text-right'>Service Entry: #44</span></span>
+                            <span className="comment-block text-sm text-slate-500  ">Resolved GPS sync for accurate vehicle tracking</span>
+
+                        </div>
+
+                    </div>
+
+                    <div className='mt-1 pr-5'>
+                        <span className='comment-block text-sm text-slate-500'> 18 minutes ago</span>
+                    </div>
+
+                    
+                </section>
+
+
+                <section className='mt-5 flex items-start flex-col sm:flex-row'>
+                    <div className="user-details-section  grow flex">
+
+                        <div className="w-14 h-14 rounded-full overflow-hidden ml-5  mr-4">
+                            <img src={User2} className='w-full h-full object-cover object-center'  alt="User Image"/>
+                        </div>
+
+                        <div className="comment-block flex flex-col justify-center">
+                            <span className="comment-header"> Emma Thompson commented on
+                             <span className='text-sky-500 text-sm cursor-pointer text-right'> Service Entry: #34</span></span>
+                            <span className="comment-block text-sm text-slate-500 ">
+                            Fixed connectivity glitch for enhanced fleet coordination</span>
+
+                        </div>
+
+                    </div>
+
+                    <div className='mt-1 pr-5'>
+                        <span className='comment-block text-sm text-slate-500'> 29 minutes ago</span>
+                    </div>
+
+                    
+                </section>
+                <section className='mt-5 flex items-start flex-col sm:flex-row'>
+                    <div className="user-details-section  grow flex">
+
+                        <div className="w-14 h-14 rounded-full overflow-hidden ml-5  mr-4">
+                            <img src={User3} className='w-full h-full object-cover object-center'  alt="User Image"/>
+                        </div>
+
+                        <div className="comment-block flex flex-col justify-center">
+                            <span className="comment-header">Bond James commented on <span className='text-sky-500 text-sm cursor-pointer text-right'> Service Entry: #44</span></span>
+                            <span className="comment-block text-sm text-slate-500 ">
+                            Addressed login authentication, enhancing system security</span>
+
+                        </div>
+
+                    </div>
+
+                    <div className='mt-1 pr-5'>
+                        <span className='comment-block text-sm text-slate-500'> 6 minutes ago</span>
+                    </div>
+
+                    
+                </section>
+                <section className='mt-5 flex items-start flex-col sm:flex-row'>
+                    <div className="user-details-section  grow flex">
+
+                        <div className="w-14 h-14 rounded-full overflow-hidden ml-5  mr-4">
+                            <img src={User4} className='w-full h-full object-cover object-center'  alt="User Image"/>
+                        </div>
+
+                        <div className="comment-block flex flex-col justify-center">
+                            <span className="comment-header pr-5">Alex Brown commented on
+                             <span className='text-sky-500 text-sm cursor-pointer text-right'> Service Entry: #14</span></span>
+                            <span className="comment-block text-sm text-slate-500 ">
+                            Fixed mileage tracking bug, ensuring accurate reports</span>
+
+                        </div>
+
+                    </div>
+
+                    <div className='mt-1 pr-5'>
+                        <span className='comment-block text-sm text-slate-500'> 8 minutes ago</span>
+                    </div>
+
+                    
+                </section>
+                <section className='mt-5 flex items-start flex-col sm:flex-row'>
+                    <div className="user-details-section  grow flex">
+
+                        <div className="w-14 h-14 rounded-full overflow-hidden ml-5  mr-4">
+                            <img src={User5} className='w-full h-full object-cover object-center'  alt="User Image"/>
+                        </div>
+
+                        <div className="comment-block flex flex-col justify-center">
+                            <span className="comment-header">Jackson Smith commented on <span className='text-sky-500 text-sm cursor-pointer text-right'>Service Entry: #44</span></span>
+                            <span className="comment-block text-sm text-slate-500 ">
+                            Solved UI display issue, enhancing user experience.</span>
+
+                        </div>
+
+                    </div>
+
+                    <div className='mt-1 pr-5'>
+                        <span className='comment-block text-sm text-slate-500'> 35 minutes ago</span>
+                    </div>
+
+                    
                 </section>
             </div>
 
