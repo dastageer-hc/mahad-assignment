@@ -93,3 +93,9 @@
     margin-right: .5rem;
     padding-top: .25rem;
 }
+
+@media  (max-width: 900px) {
+    .mainSidebarContainer{
+        display: none;
+    }
+}
